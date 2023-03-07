@@ -35,6 +35,7 @@ const counter = function(display6Lives) {
 - each word/string will be assigned an index number, create random number function
 - the random number will represent the index number of whatever string will be the mystery word
 - make randomWord function work for any/all category arrays (in case there are more-- will function like a method)
+- how to correlate blank spaces with letters in string?
 
 const countriesCat = ['Algeria', 'Albania', 'Botswana', 'Bulgaria', 'Cambodia', 'Cameroon', 'Djibouti', 'Denmark', 'Eritrea', 'Estonia', 'Finland', 'Fiji', 'Guatemala', 'Grenada', 'Haiti', 'Honduras', 'Israel', 'Indonesia', 'Jordan', 'Jamaica', 'Kenya', 'Kiribati', 'Lebanon', 'Liechtenstein', 'Malawi', 'Moldova', 'Nicaragua', 'Nauru']
 
