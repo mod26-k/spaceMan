@@ -1,3 +1,8 @@
 /* make the spacing between h1 and h3 smaller */
 
 /* background and text color change */
+
+li {
+    display: inline;
+}
+
