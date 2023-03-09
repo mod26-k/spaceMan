@@ -43,7 +43,8 @@ function newWord(event) {
     const randomIdx = Math.floor(Math.random() * countries.length)
     const word = countries[randomIdx].toLowerCase()
     const generatedWord = word.split('')
-    console.log(generatedWord)
+    let letterCount = document.getElementById('lettercount')
+    letterCount.innerText = "This word has " + generatedWord.length + " letters"
     genWordArr.push(generatedWord)
     generatedWord.forEach((letter) => {
         const characterBox = document.createElement('div');
@@ -53,22 +54,9 @@ function newWord(event) {
             character.setAttribute('id', letter);
             characterBox.append(character)
             charList.append(characterBox);
-            character.style.visibility = "hidden";
+            character.style.visibility = 'hidden';
         })
     keyboard.disabled = false;
-}
-
-// Counts and displays amount of turns left, and disables keyboard
-let numOfClicks = 6
-const counterDisplay = document.getElementById
-('counter')
-counterDisplay.innerText = ('You have 6 lives left')
-
-function calculateGuessesLeft(event) {
-    numOfClicks -= 1;
-    counterDisplay.innerText = ('You have ' + numOfClicks + ' lives left')
-    if (numOfClicks === 0)
-        return keyboard.disabled = true;
 }
 
 
@@ -89,11 +77,10 @@ function compareWords(event) {
     const word = countries[randomIdx].toLowerCase()
     const generatedWord = word.split('')
     const guessedLetter = event.target.id;
-    const character = document.querySelectorAll('li')
         for (let i = 0; i < generatedWord.length; i++) {
-            const charListItem = character[i]
+            const character = document.querySelector('li')
             if (genWordArr.toString('').includes(guessedLetter)) {
-                return charListItem.style.visibility = "visible"
+                return character.style.visibility = "visible"
             }
             else {
                 return console.log('try again')
@@ -104,7 +91,7 @@ function compareWords(event) {
 // Invoke functions
 displayLetterButtons()
 displayCategoryButtons()
-alphabetButtons.addEventListener('click', calculateGuessesLeft)
+// alphabetButtons.addEventListener('click', calculateGuessesLeft)
 alphabetButtons.addEventListener('click', storeUserGuesses)
 alphabetButtons.addEventListener('click', compareWords)
 categoryButtons.addEventListener('click', newWord)

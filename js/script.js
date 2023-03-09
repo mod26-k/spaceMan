@@ -1,4 +1,4 @@
-//ORIGINAL CODE
+//ORIGINAL CODE // GRAVEYARD
 
 // Keyboard options
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -126,3 +126,17 @@ displayCategoryButtons()
 // - add different categories with larger library of possible words
 // - add a "hint" button that generates hint depending on the generated word
 // - allow for 2 players;
+
+//GRAVEYARD
+// Counts and displays amount of turns left, and disables keyboard
+// let numOfClicks = 6
+// const counterDisplay = document.getElementById
+// ('counter')
+// counterDisplay.innerText = ('You have 6 lives left')
+
+// function calculateGuessesLeft(event) {
+//     numOfClicks -= 1;
+//     counterDisplay.innerText = ('You have ' + numOfClicks + ' lives left')
+//     if (numOfClicks === 0)
+//         return keyboard.disabled = true;
+// }
