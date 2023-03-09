@@ -1,6 +1,8 @@
-/* make the spacing between h1 and h3 smaller */
+h1 {
+    padding-bottom: 0%;
+}
 
-/* background and text color change */
+
 
 li {
     display: inline-flex;
@@ -10,9 +12,13 @@ li {
 
 #box {
     display: inline-flex;
+    border: 2px solid black;
+    margin: 0.25rem;
+    padding: 0.5rem;
+    width: 1rem;
 }
 
-/* .test {
+button {
+    color: black;
     margin: 0.5rem;
-    border-bottom: 5px solid black;
-} */
+}

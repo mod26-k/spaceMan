@@ -37,8 +37,8 @@ const countries = ['Algeria', 'Albania', 'Botswana', 'Bulgaria', 'Cambodia', 'Ca
 //EVENT-LISTENING FUNCTIONS
 // Array where the generated word will be stored
 let genWordArr = []
-// Generates new word, converts it to lowercase and splits each letter. Then puts each letter into an unordered list
 
+// Generates new word, converts it to lowercase and splits each letter. Then puts each letter into an unordered list
 function newWord(event) {
     const randomIdx = Math.floor(Math.random() * countries.length)
     const word = countries[randomIdx].toLowerCase()
@@ -51,12 +51,27 @@ function newWord(event) {
         const character = document.createElement('li');
             character.innerText = letter;
             characterBox.setAttribute('id', 'box');
-            character.setAttribute('id', letter);
+            character.setAttribute('class', letter);
             characterBox.append(character)
             charList.append(characterBox);
             character.style.visibility = 'hidden';
         })
     keyboard.disabled = false;
+}
+
+
+// Counts and displays amount of turns left
+let numOfClicks = 6
+const counterDisplay = document.getElementById
+('counter')
+counterDisplay.innerText = ('You have ' + numOfClicks + ' lives left')
+
+function calculateGuessesLeft(event) {
+    numOfClicks -= 1;
+    counterDisplay.innerText = ('You have ' + numOfClicks + ' lives left')
+    const keyboard = document.querySelector('fieldset')
+    if (numOfClicks === 0)
+        return keyboard.disabled = true;
 }
 
 
@@ -77,21 +92,20 @@ function compareWords(event) {
     const word = countries[randomIdx].toLowerCase()
     const generatedWord = word.split('')
     const guessedLetter = event.target.id;
-        for (let i = 0; i < generatedWord.length; i++) {
-            const character = document.querySelector('li')
-            if (genWordArr.toString('').includes(guessedLetter)) {
-                return character.style.visibility = "visible"
+    const character = document.querySelectorAll(`.${guessedLetter}`)
+        genWordArr[0].forEach(function(letter) {
+            if (letter === guessedLetter) {
+                character.forEach(function(guess){
+                    guess.style.visibility = "visible"
+                })
             }
-            else {
-                return console.log('try again')
-            }
-        }
-    }
+        })
+        // if 
+    }    
 
 // Invoke functions
 displayLetterButtons()
 displayCategoryButtons()
-// alphabetButtons.addEventListener('click', calculateGuessesLeft)
 alphabetButtons.addEventListener('click', storeUserGuesses)
 alphabetButtons.addEventListener('click', compareWords)
 categoryButtons.addEventListener('click', newWord)
