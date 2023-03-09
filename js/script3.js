@@ -100,7 +100,6 @@ function compareWords(event) {
                 })
             }
         })
-        // if 
     }    
 
 // Invoke functions
