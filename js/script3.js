@@ -42,6 +42,7 @@ function newWord() {
     const randomIdx = Math.floor(Math.random() * countries.length)
     const word = countries[randomIdx].toLowerCase()
     const generatedWord = word.split('')
+    console.log(generatedWord)
     genWordArr.push(generatedWord)
     generatedWord.forEach((letter) => {
             let character = document.createElement('li');
@@ -63,21 +64,17 @@ function storeUserGuesses(event) {
     userGuesses.push(guessedLetter)
 }
 
-function compareArrays(arr1, arr2) {
-    for (let i = 0; i < genWordArr.length; i++) {
-        for (let i = 0; i < userGuesses.length; i++) {
-            if (userGuesses[i] = genWordArr[i]) {
-                charList.style.visibility = "visible";
-            }
-            else {
-                console.log('try again');
-                }
-            }
-        }
+function compareWords(event) {
+    const randomIdx = Math.floor(Math.random() * countries.length)
+    const word = countries[randomIdx].toLowerCase()
+    const generatedWord = word.split('')
+    const guessedLetter = event.target.id;
+        for (let i = 0; i < generatedWord.length; i++) {
+            itsAMatch = generatedWord.find(guessedLetter => guessedLetter === generatedWord[i].id)
+            charList.style.visibility = "visible";
     }
-
-
-
+    console.log(guessedLetter)
+}
 
 
 
@@ -85,5 +82,5 @@ function compareArrays(arr1, arr2) {
 displayLetterButtons()
 displayCategoryButtons()
 alphabetButtons.addEventListener('click', storeUserGuesses)
-alphabetButtons.addEventListener('click', compareArrays)
+alphabetButtons.addEventListener('click', compareWords)
 categoryButtons.addEventListener('click', newWord)
