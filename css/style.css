@@ -8,6 +8,10 @@ li {
     color: black;
 }
 
+#letter {
+    display: inline-flex;
+}
+
 /* .test {
     margin: 0.5rem;
     border-bottom: 5px solid black;

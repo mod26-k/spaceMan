@@ -38,6 +38,7 @@ const countries = ['Algeria', 'Albania', 'Botswana', 'Bulgaria', 'Cambodia', 'Ca
 // Array where the generated word will be stored
 let genWordArr = []
 // Generates new word, converts it to lowercase and splits each letter. Then puts each letter into an unordered list
+
 function newWord(event) {
     const randomIdx = Math.floor(Math.random() * countries.length)
     const word = countries[randomIdx].toLowerCase()
@@ -45,15 +46,17 @@ function newWord(event) {
     console.log(generatedWord)
     genWordArr.push(generatedWord)
     generatedWord.forEach((letter) => {
-            let character = document.createElement('li');
+        const characterBox = document.createElement('div');
+        const character = document.createElement('li');
             character.innerText = letter;
+            characterBox.setAttribute('id', 'box');
             character.setAttribute('id', letter);
-            charList.appendChild(character);
-            charList.style.visibility = "hidden";
+            characterBox.append(character)
+            charList.append(characterBox);
+            character.style.visibility = "hidden";
         })
     keyboard.disabled = false;
 }
-
 
 // Counts and displays amount of turns left, and disables keyboard
 let numOfClicks = 6
@@ -85,21 +88,18 @@ function compareWords(event) {
     const randomIdx = Math.floor(Math.random() * countries.length)
     const word = countries[randomIdx].toLowerCase()
     const generatedWord = word.split('')
-    const guessedLetter = event.target.innerText;
-        if (genWordArr.toString('').includes(guessedLetter)) {
-            return charList.style.visibility = "visible"
+    const guessedLetter = event.target.id;
+    const character = document.querySelectorAll('li')
+        for (let i = 0; i < generatedWord.length; i++) {
+            const charListItem = character[i]
+            if (genWordArr.toString('').includes(guessedLetter)) {
+                return charListItem.style.visibility = "visible"
+            }
+            else {
+                return console.log('try again')
+            }
         }
-        else {
-            return console.log('try again')
-        }
-
-    //     for (let i = 0; i < generatedWord.length; i++) {
-    //         itsAMatch = genWordArr.find(guessedLetter => guessedLetter === genWordArr[i])
-    //         charList.style.visibility = "visible";
-    // }
-    console.log(guessedLetter)
-}
-
+    }
 
 // Invoke functions
 displayLetterButtons()
