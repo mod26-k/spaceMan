@@ -46,6 +46,7 @@ function newWord(event) {
     let letterCount = document.getElementById('lettercount')
     letterCount.innerText = "This word has " + generatedWord.length + " letters"
     genWordArr.push(generatedWord)
+    // Payne helped me make small changes to the function below
     generatedWord.forEach((letter) => {
         const characterBox = document.createElement('div');
         const character = document.createElement('li');
@@ -62,18 +63,19 @@ function newWord(event) {
 
 
 // Counts and displays amount of turns left
-let numOfClicks = 6
+let numOfClicks = 10
 const counterDisplay = document.getElementById
 ('counter')
-counterDisplay.innerText = ('You have ' + numOfClicks + ' lives left')
+counterDisplay.innerText = ('You have ' + numOfClicks + ' guesses left')
 
 function calculateGuessesLeft(event) {
     numOfClicks -= 1;
-    counterDisplay.innerText = ('You have ' + numOfClicks + ' lives left')
+    counterDisplay.innerText = ('You have ' + numOfClicks + ' guesses left')
     const keyboard = document.querySelector('fieldset')
         if (numOfClicks === 0) {
             keyboard.disabled = true;
             document.getElementById('reveal').innerHTML = 'The word is: ' + genWordArr[0].join('')
+            document.getElementById('winlose').innerHTML = 'You Lose!'
         }
 }
 
@@ -91,10 +93,8 @@ function storeUserGuesses(event) {
 
 // Checks if the guessedLetter is in the generatedWord
 function compareWords(event) {
-    const randomIdx = Math.floor(Math.random() * countries.length)
-    const word = countries[randomIdx].toLowerCase()
-    const generatedWord = word.split('')
     const guessedLetter = event.target.id;
+    // Below code was written with help from Payne, Evan, and Matt
     const character = document.querySelectorAll(`.${guessedLetter}`)
         genWordArr[0].forEach(function(letter) {
             if (letter === guessedLetter) {
@@ -103,7 +103,13 @@ function compareWords(event) {
                 })
             }
         })
-}    
+        // .includes() was recommended to me by Megan and Payne. Followed syntax of .every() from MDN example 2 
+            if (genWordArr[0].every(letter => userGuesses.includes(letter))) {
+                document.getElementById('winlose').innerHTML = 'You Win!'
+                keyboard.disabled = true;
+            }
+}
+
 
 // Invoke functions
 displayLetterButtons()
