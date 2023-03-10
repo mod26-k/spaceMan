@@ -57,6 +57,7 @@ function newWord(event) {
             character.style.visibility = 'hidden';
         })
     keyboard.disabled = false;
+    document.getElementById('countries').setAttribute("disabled", true)
 }
 
 
@@ -70,8 +71,10 @@ function calculateGuessesLeft(event) {
     numOfClicks -= 1;
     counterDisplay.innerText = ('You have ' + numOfClicks + ' lives left')
     const keyboard = document.querySelector('fieldset')
-    if (numOfClicks === 0)
-        return keyboard.disabled = true;
+        if (numOfClicks === 0) {
+            keyboard.disabled = true;
+            document.getElementById('reveal').innerHTML = 'The word is: ' + genWordArr[0].join('')
+        }
 }
 
 
@@ -100,11 +103,12 @@ function compareWords(event) {
                 })
             }
         })
-    }    
+}    
 
 // Invoke functions
 displayLetterButtons()
 displayCategoryButtons()
 alphabetButtons.addEventListener('click', storeUserGuesses)
 alphabetButtons.addEventListener('click', compareWords)
+keyboard.addEventListener('click', calculateGuessesLeft)
 categoryButtons.addEventListener('click', newWord)
