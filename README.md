@@ -1,5 +1,5 @@
 ![](/photos/SPACE%20MAN.png)
-
+<!-- 
 <style>
     .flex-container {
         display: flex;
@@ -11,15 +11,17 @@
        flex-direction: column;
        
     }
-</style>
+</style> -->
 
-<div class="flex-container">
+<!-- <div class="flex-container">
 <div class="flex-item">![](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)</div>
 
 <div class="flex-item">![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</div>
 
 <div class="flex-item">![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)</div>
-</div>
+</div> -->
+
+![](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)
 
 # Introduction
 Space Man is a word-guessing game where the computer generates a random word within a specific theme, and the user has several attempts to guess the correct letters to reveal the word. If the user uses all attempts and does not guess the word correctly, they lose. If they do, they win.
