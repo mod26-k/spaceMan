@@ -59,7 +59,7 @@ ul.task-list li input[type="checkbox"] {
     }
 </style>
 <div class="flex-container">
-<div class="flex-item" style="position: flex-start">
+<div class="flex-item">
 <img src="https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg" class="img-fluid">
 </div>
 <div class="flex-item">
@@ -69,10 +69,43 @@ ul.task-list li input[type="checkbox"] {
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&amp;logo=html5&amp;logoColor=white.png" class="img-fluid">
 </div>
 </div>
-<div>
-https://mod26-k.github.io/spaceMan/
-</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
 <p>Space Man is a word-guessing game where the computer generates a random word within a specific theme, and the user has several attempts to guess the correct letters to reveal the word. If the user uses all attempts and does not guess the word correctly, they lose. If they do, they win.</p>
+<div>
+<a href="https://mod26-k.github.io/spaceMan/">LIVE DEMO HERE</a>
+</div>
+<section id="how-it-works" class="level3">
+<h3 class="anchored" data-anchor-id="how-it-works">How It Works</h3>
+<p><img src="/photos/gamepage.png" class="img-fluid"> The player starts the game by selecting a category, which generates a word within that category. The category button becomes disabled to prevent players from</p>
+<p><img src="/photos/wordgenerated.png" class="img-fluid"> The game informs the player of how many letters are in the generated word and displays the blank spaces for each letter. There is a guess counter at the bottom that tells the player how many attempts at guessing a letter is remaining.</p>
+<p><img src="/photos/youwin.png" class="img-fluid"> If the user guesses the word correctly, they win the game. If they don’t guess the word correctly, and they’ve used all their guesses, they lose.</p>
+</section>
+<section id="technologies-used" class="level3">
+<h3 class="anchored" data-anchor-id="technologies-used">Technologies Used:</h3>
+<p><em>HTML </em>CSS <em>Javascript </em>VSCode</p>
+<section id="code-i-had-trouble-with" class="level4">
+<h4 class="anchored" data-anchor-id="code-i-had-trouble-with">Code I had trouble with</h4>
+</section>
+<section id="some-immediate-changes-id-like-to-make-are" class="level4">
+<h4 class="anchored" data-anchor-id="some-immediate-changes-id-like-to-make-are">Some immediate changes I’d like to make are:</h4>
+<pre><code>* To add more categories.
+* To fix the event-listener to only account for clicks on the letter buttons, not in the entire fieldset.
+* To add CSS.
+* To be able to start a new game without refreshing the page. Ideally, by selecting a new category at the end of the game.
+* To fix the category button so that it does not continuously generate new words without clearing the original array.</code></pre>
+</section>
+<section id="some-features-i-would-like-to-add-to-this-game-in-the-future-are" class="level4">
+<h4 class="anchored" data-anchor-id="some-features-i-would-like-to-add-to-this-game-in-the-future-are">Some features I would like to add to this game in the future are:</h4>
+<pre><code>* To change the guess counter to only subtract guesses, if the player guessed incorrectly. It currently counts down regardless of if the guess is correct or not, which will create problems with larger words.
+* To add an all or nothing feature that allows the player to type in their guess of the entire word. If they guess the entire word, they win. If they get it wrong, game over.
+* To add a timer to prevent unreasonably long game times, but the timer should be able to be toggled on/off by the user.
+* To allow for multiple players. I'd like multiple players to be able to take turns guessing the generated word, and to be able to input their own word to have other players guess, rather than just the generated word.
+* To be able to keep score for all players.
+* To allow players to use their physical keyboard to input words or guesses.</code></pre>
+</section>
+</section>
+</section>
 
 </main>
 <!-- /main column -->
