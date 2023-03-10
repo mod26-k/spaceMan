@@ -1,13 +1,13 @@
 ![](/photos/SPACE%20MAN.png)
 
+# [LIVE DEMO HERE](https://mod26-k.github.io/spaceMan/)
+
 ![](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)
 ![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
 # Introduction
 Space Man is a word-guessing game where the computer generates a random word within a specific theme, and the user has several attempts to guess the correct letters to reveal the word. If the user uses all attempts and does not guess the word correctly, they lose. If they do, they win.
-
-# [LIVE DEMO HERE](https://mod26-k.github.io/spaceMan/)
 
 ## How It Works
 ![](/photos/gamepage.png)
